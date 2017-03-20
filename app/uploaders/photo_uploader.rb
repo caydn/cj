@@ -12,8 +12,18 @@ class PhotoUploader < CarrierWave::Uploader::Base
   include Sprockets::Rails::Helper
 
   # Choose what kind of storage to use for this uploader:
+  # Storage configuration within the uploader supercedes the global CarrierWave
+  # config, so be sure that your uploader does not contain `storage :file`, or
+  # AWS will not be used.
   # storage :file
   storage :fog
+  # storage :aws
+
+  # You can find full list of custom headers in AWS SDK documentation on
+  # AWS::S3::S3Object
+  # def download_url(filename)
+  #  url(response_content_disposition: %Q{attachment; filename="#{filename}"})
+  # end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

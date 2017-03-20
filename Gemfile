@@ -54,6 +54,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Gems for image managment
 gem 'carrierwave'
+gem 'carrierwave-aws'
+gem 'aws-sdk', '~> 2'
 gem 'mini_magick'
 gem 'fog'
 gem 'figaro'

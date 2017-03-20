@@ -25,11 +25,14 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    # logger.debug "New project: #{@project.attributes.inspect}"
+    # logger.debug "Project should be valid: #{@project.valid?}"
 
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
+        # logger.debug "The article was saved and now the user is going to be redirected..."
       else
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
