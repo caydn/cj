@@ -16,7 +16,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # Storage configuration within the uploader supercedes the global CarrierWave
   # config, so be sure that your uploader does not contain `storage :file`, or
   # AWS will not be used.
-    storage :fog
+  storage :fog
   # if Rails.env.production?
   #   storage :fog
   # end
