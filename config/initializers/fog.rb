@@ -1,5 +1,7 @@
 
 CarrierWave.configure do |config|
+  config.root = Rails.root.join('tmp')
+  config.cache_dir = 'carrierwave'
   # Fog with carrierwave gem config
   config.fog_credentials = {
     provider:               'AWS',
@@ -24,7 +26,7 @@ CarrierWave.configure do |config|
   config.fog_directory  = ENV['S3_BUCKET']
   config.fog_public     = false
   # config.fog_use_ssl_for_aws = false
-  # config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
 end
 # unless ENV['AWS_ACCESS_KEY_ID'].blank?
 #
