@@ -1,4 +1,4 @@
-if Rails.env.production?
+# if Rails.env.production?
   CarrierWave.configure do |config|
     # Fog with carrierwave gem config
     config.fog_credentials = {
@@ -10,14 +10,14 @@ if Rails.env.production?
     }
 
     config.cache_dir  = "#{Rails.root}/tmp/uploads" # For carrierwave to work on heroku
-    #
+
     config.fog_directory  = ENV['S3_BUCKET']
     # config.fog_use_ssl_for_aws = false
     # config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
     config.fog_public     = false
 
   end
-end
+# end
 
 # unless ENV['AWS_ACCESS_KEY_ID'].blank?
 # end
