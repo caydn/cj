@@ -1,4 +1,4 @@
-# if Rails.env.production?
+if Rails.env.production?
   CarrierWave.configure do |config|
     # config.root = Rails.root.join('tmp')
     # config.cache_dir = 'carrierwave'
@@ -11,19 +11,31 @@
 
     }
 
-
     config.cache_dir  = "#{Rails.root}/tmp/uploads" # For carrierwave to work on heroku
     #
     config.fog_directory  = ENV['S3_BUCKET']
     config.fog_public     = false
     # config.fog_use_ssl_for_aws = false
     # config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+
+  else
+    CarrierWave.configure do |config|
+      # Fog with carrierwave gem config
+      config.fog_credentials = {
+        provider:               'AWS',
+        aws_access_key_id:      ENV['AWS_ACCESS_KEY_ID'],
+        aws_secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY'],
+        region:                 ENV['AWS_REGION']
+
+      }
+
+      config.fog_directory  = ENV['S3_BUCKET']
+      config.fog_public     = false
+
   end
-# end
+end
 
 # unless ENV['AWS_ACCESS_KEY_ID'].blank?
-#
-#
 # end
 
 
