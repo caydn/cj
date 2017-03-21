@@ -1,3 +1,4 @@
+# encoding: utf-8
 class PhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -15,9 +16,15 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # Storage configuration within the uploader supercedes the global CarrierWave
   # config, so be sure that your uploader does not contain `storage :file`, or
   # AWS will not be used.
+  if Rails.env.production?
+    storage :fog
+  end
   # storage :file
-  storage :fog
+
   # storage :aws
+
+  include CarrierWave::MimeTypes
+  process :set_content_type
 
   # You can find full list of custom headers in AWS SDK documentation on
   # AWS::S3::S3Object
@@ -30,9 +37,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
   def store_dir
    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-  def cache_dir
-    "#{Rails.root}/tmp/uploads"
-  end
+  # def cache_dir
+  #   "#{Rails.root}/tmp/uploads"
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
