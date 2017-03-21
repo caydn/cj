@@ -1,0 +1,103 @@
+<!-- welcome content -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 homeContent story">
+      <h2>Story</h2>
+      <hr>
+      <p>I’m a designer &amp; developer living in New York, New York.</p>
+      <p>By day I’m a freelance front- end dev, working on client and by night, thursday nights to be exact, I’m over speaking in 140 characters on <a href="#">twitter</a> as I over indulge on the TGIT Line up.</p>
+      <p>Otherwise you can find me commiting to <a href="#">github</a> or taking <a href="#">notes</a> behind the scenes at <a href="#">DevGirl Notes</a>.</p>
+    </div>
+    <div class="col-md-5 homeContent ">
+      <h2>Projects</h2>
+      <hr>
+      <% @projects.each do |project| %>
+        <h3><a href="#"><%= link_to project.title, project %></a></h3>
+        <p class="date"><%= project.description %></p>
+      <% end %>
+
+      <%= link_to "view all projects", projects_path, class: "view" %><!-- view all btn -->
+    </div>
+    <!-- <div class="col-md-3 homeContent">
+      <h2>Notes</h2>
+      <hr>
+
+      <h3><a href="#">Thoughts</a></h3>
+      <p class="date">thsi is sps text description</p>
+
+      <h3><a href="#">Project | Ecom</a></h3>
+      <p class="date">thsi is sps text description</p>
+
+      <h3><a href="#">Inspiration</a></h3>
+      <p class="date">thsi is sps text description</p>
+
+      <a href="notes.html" class="view">view all  notes</a>
+    </div> -->
+  </div>
+
+  <!-- Contacts Popup Modal -->
+  <section id="contacts">
+    <!--Begin Modal Window-->
+    <div class="modal fade left" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="pull-left no-margin">Say Hello!</h3>
+            <button type="button" class="close" data-dismiss="modal" title="Close"><span class="glyphicon glyphicon-remove"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form class="form-horizontal" role="form" method="post" action="form_to_email_script.php ">
+              <span class="required">* Required</span>
+              <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">
+                <span class="required">*</span> Name:</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="First &amp; Last" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">
+                <span class="required">*</span> Email: </label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="you@domain.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message" class="col-sm-3 control-label">
+                <span class="required">*</span> Message:</label>
+                <div class="col-sm-9">
+                  <textarea name="message" rows="4" required class="form-control" id="message" placeholder="Comments"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="human" class="col-sm-3 control-label">
+                <span class="required">*</span> Human or Bot:</label>
+                <div class="col-sm-4">
+                  <h3 class="human">Six + 6 = ?</h3>
+                  <input type="number" class="form-control" id="human" name="human" placeholder="Enter sum in digits">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3">
+                  <button type="submit" id="submit" name="submit" class="btn-lg btn-default">SUBMIT</button>
+                </div>
+              </div>
+              <!--end Form--></form>
+
+          </div>
+          <div class="modal-footer">
+            <div class="col-xs-10 text-center text-muted">
+              <small><strong>Privacy Policy:</strong>
+              Simply put, we will no share you information with anyone.</small>
+          </div>
+        <!-- <button class="btn-sm close" type="button" data-dismiss="modal">Close</button> -->
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </section><!-- end contact modal -->
+
+</div><!-- end container-->

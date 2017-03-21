@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :projects
 
-  root to: "projects#index"
+  get 'welcome/index'
+  root 'welcome#index'
 end
