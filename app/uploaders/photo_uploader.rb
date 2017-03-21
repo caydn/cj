@@ -22,9 +22,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # storage :file
 
   # storage :aws
-
-  include CarrierWave::MimeTypes
-  process :set_content_type
+  # 
+  # include CarrierWave::MimeTypes
+  # process :set_content_type
 
   # You can find full list of custom headers in AWS SDK documentation on
   # AWS::S3::S3Object
