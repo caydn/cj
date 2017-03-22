@@ -70,3 +70,6 @@ gem 'friendly_id', '~> 5.2'
 
 # Gems for contact form and email functionality
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
+
+# Authentification
+gem 'devise'
