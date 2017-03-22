@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-
 <div class="full_project">
   <div class="container">
     <div class="row" >
       <div class="col-md-8 col-md-offset-2">
         <div class="back-btn">
-            <i class="fa fa-angle-left"> <%= link_to 'Back', projects_path, class: "back" %></i>
+            <i class="fa fa-angle-left"></i> <%= link_to 'Back', projects_path, class: "back" %>
         </div>
+        <p id="notice"><%= notice %></p>
       </div>
     </div>
     <div class="row">
@@ -24,8 +22,13 @@
             <%= @project.summary %>
           </p>
 
+          <% if user_signed_in? %>
+            <div id="admin_links" class="text-center">
+              <%= link_to 'Edit Project', edit_project_path(@project) %> :
+              <%= link_to 'Delete Project', project_path(@project), method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
+          <% end %>
 
-          <%= link_to 'Edit', edit_project_path(@project) %>
         </div>
       </div>
     </div>

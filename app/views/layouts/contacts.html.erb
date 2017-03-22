@@ -31,10 +31,10 @@
       <div id="navbar" class="collapse navbar-collapse pull-right">
         <ul class="nav navbar-nav">
           <li><%= link_to "Projects", projects_path %></li>
-          <!-- <li><a href="notes.html">Notes</a></li> -->
-          <!-- <li><%= link_to "Contact" %></li> -->
           <li><%= link_to "Contact", new_contact_path %></li>
-          <!-- <li><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#myModal">Contact</button></li> -->
+          <% if user_signed_in? %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% end %>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -46,7 +46,7 @@
 
     <!-- footer -->
     <footer id="mainFooter" class="footer">
-        <div class="container-fluid">
+        <div class="container">
           <p class="copyright">&copy; 2016 Cayden Jacobs</p><!-- end copyright-->
           <nav>
             <a href="https://twitter.com/cayferg" target="_blank"><i class="fa fa-twitter"></i></a>
