@@ -67,3 +67,6 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'simple_form'
 gem 'friendly_id', '~> 5.2'
+
+# Gems for contact form and email functionality
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
