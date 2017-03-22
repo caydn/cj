@@ -39,12 +39,14 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    <div class="notices">
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% else alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+    </div>
 
-    <% if notice %>
-      <p class="notice"><small><%= notice %></small></p>
-    <% else alert %>
-      <p class="alert"><small><%= alert %></small></p>
-    <% end %>
 
     <%= yield %>
 
