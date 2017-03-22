@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>CJ | CONTACT</title>
+    <%= csrf_meta_tags %>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700|Raleway:100,300,700" rel="stylesheet">
+    <!-- Fontawesome for Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- header -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to (root_path), :class => 'name navbar-brand' do %>
+          <span>CJ <span class="divide">|</span> Cayden Jacobs</span>
+        <% end %>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse pull-right">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Projects", projects_path %></li>
+          <!-- <li><a href="notes.html">Notes</a></li> -->
+          <!-- <li><%= link_to "Contact" %></li> -->
+          <li><%= link_to "Contact", new_contact_path %></li>
+          <!-- <li><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#myModal">Contact</button></li> -->
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+
+
+    <%= yield %>
+
+    <!-- footer -->
+    <footer id="mainFooter" class="footer">
+        <div class="container-fluid">
+          <p class="copyright">&copy; 2016 Cayden Jacobs</p><!-- end copyright-->
+          <nav>
+            <a href="https://twitter.com/cayferg" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://github.com/caydn" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="https://behance.net/caydn" target="_blank"><i class="fa fa-behance"></i></a>
+          </nav><!-- end social-->
+        </div>
+    </footer>
+  </body>
+</html>
