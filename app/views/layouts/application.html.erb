@@ -14,33 +14,37 @@
   </head>
 
   <body>
-    <!-- header -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to (root_path), :class => 'name navbar-brand' do %>
-          <span>CJ <span class="divide">|</span> Cayden Jacobs</span>
-        <% end %>
+      <!-- header -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to (root_path), :class => 'name navbar-brand' do %>
+            <span>CJ <span class="divide">|</span> Cayden Jacobs</span>
+          <% end %>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse pull-right">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Projects", projects_path %></li>
+            <!-- <li><a href="notes.html">Notes</a></li> -->
+            <!-- <li><%= link_to "Contact" %></li> -->
+            <li><%= link_to "Contact", new_contact_path %></li>
+            <!-- <li><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#myModal">Contact</button></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-      <div id="navbar" class="collapse navbar-collapse pull-right">
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Projects", projects_path %></li>
-          <!-- <li><a href="notes.html">Notes</a></li> -->
-          <!-- <li><%= link_to "Contact" %></li> -->
-          <li><%= link_to "Contact", new_contact_path %></li>
-          <!-- <li><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#myModal">Contact</button></li> -->
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav>
+    </nav>
 
-
+    <% if notice %>
+      <p class="notice"><small><%= notice %></small></p>
+    <% else alert %>
+      <p class="alert"><small><%= alert %></small></p>
+    <% end %>
 
     <%= yield %>
 
