@@ -1,20 +1,14 @@
 <div class="full_project">
   <div class="container">
-    <div class="row" >
-      <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
         <div class="back-btn">
             <i class="fa fa-angle-left"></i> <%= link_to 'Back', projects_path, class: "back" %>
         </div>
-        <p id="notice"><%= notice %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
         <div class="project_show">
           <p>
             <h2><%= @project.title %> <small> | <%= @project.description %></small></h2>
           </p>
-
           <p>
             <%= image_tag(@project.image.full_size.url, class:"img-responsive")  %>
           </p>
