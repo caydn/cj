@@ -16,18 +16,11 @@
                           <%= image_tag(project.image.profile_size.url, class: "img-portfolio, img-responsive") %>
                           <div class="textbox">
                             <p class="text-content">
-                              <span>
-                                <%= project.title %>
-                                <hr class="pro">
-                                <!-- <br /> -->
-                                <%= project.description %>
-                                <!-- <br />
-                                <%= link_to 'Show', project %>
-                                <br>
-                                <%= link_to 'Edit', edit_project_path(project) %>
-                                <br>
-                                <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %> -->
-                              </span>
+                              <span><%= project.title %>
+
+                              <hr class="pro">
+
+                              <%= project.description %></span>
                             </p>
                           </div>
                         </div>
