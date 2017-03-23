@@ -123,12 +123,28 @@ body
 
 .divide
   color: $golden
-
-.navbar-inverse .navbar-nav>li>a
+.nav > li > a
+  padding-left: 5px
+  padding-right: 5px
+  margin: 0 10px
+.navbar-inverse .navbar-nav> li >a
   font-size: 1.5rem
   color: $dark
   &:hover
     color: $blue
+
+.navbar-inverse .navbar-nav> .active >a
+  font-size: 1.5rem
+  color: $dark
+  border-bottom: solid $golden
+  border-bottom-width: 4px
+  background-color: transparent
+  &:hover
+    background-color: transparent
+    color: $blue
+
+
+
 
 /* user notices and alerts*/
 .notices
@@ -188,6 +204,8 @@ body
 
 .story
   padding: 0 7.5% 0 15px
+
+
   p
     font-size: 1.40em
     // font-weight: 300
@@ -202,7 +220,7 @@ body
   background: $footer
   // padding: 0.5em 5% 0.5em
   // border-top: 1px solid $golden
-  margin-top: 60px
+  margin-top: 54px
   // height: 95px
   .copyright
     float: left
